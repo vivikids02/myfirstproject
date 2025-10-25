@@ -1,0 +1,149 @@
+/* Add these styles to your existing CSS */
+
+/* Category optgroup styling */
+optgroup {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+optgroup option {
+    font-weight: normal;
+    color: #34495e;
+    padding-left: 10px;
+}
+
+/* Chart container improvements */
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.chart-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.chart-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.chart-toggle {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.3s ease;
+}
+
+.chart-toggle:hover {
+    background: #2980b9;
+}
+
+/* Enhanced transaction categories display */
+.transaction-category {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #ecf0f1;
+    padding: 2px 8px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* Category color coding in transactions */
+.transaction-item[data-category="salary"] { border-left-color: #27ae60; }
+.transaction-item[data-category="freelance"] { border-left-color: #2ecc71; }
+.transaction-item[data-category="rent"] { border-left-color: #e74c3c; }
+.transaction-item[data-category="utilities"] { border-left-color: #e67e22; }
+.transaction-item[data-category="groceries"] { border-left-color: #f39c12; }
+.transaction-item[data-category="transportation"] { border-left-color: #d35400; }
+.transaction-item[data-category="flights"] { border-left-color: #9b59b6; }
+.transaction-item[data-category="accommodation"] { border-left-color: #8e44ad; }
+.transaction-item[data-category="dining"] { border-left-color: #c0392b; }
+.transaction-item[data-category="entertainment"] { border-left-color: #16a085; }
+.transaction-item[data-category="shopping"] { border-left-color: #2980b9; }
+
+/* Improved chart colors */
+.chart-colors {
+    /* Income categories - Greens */
+    --color-salary: #27ae60;
+    --color-freelance: #2ecc71;
+    --color-bonus: #55efc4;
+    --color-investment: #00b894;
+    
+    /* Essential expenses - Reds/Oranges */
+    --color-rent: #e74c3c;
+    --color-utilities: #e67e22;
+    --color-groceries: #f39c12;
+    --color-transportation: #d35400;
+    
+    /* Lifestyle - Blues/Purples */
+    --color-dining: #c0392b;
+    --color-entertainment: #16a085;
+    --color-shopping: #2980b9;
+    --color-subscriptions: #3498db;
+    
+    /* Travel - Purples */
+    --color-flights: #9b59b6;
+    --color-accommodation: #8e44ad;
+    --color-activities: #6c5ce7;
+    
+    /* Family - Pinks */
+    --color-childcare: #fd79a8;
+    --color-pets: #e84393;
+    --color-education: #a29bfe;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .charts-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .chart-actions {
+        position: static;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .transaction-amount {
+        margin: 10px 0;
+    }
+}
+
+/* Enhanced summary cards with icons */
+.summary-cards .card::before {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.income-card::before { content: "📈"; }
+.expense-card::before { content: "📉"; }
+.balance-card::before { content: "💰"; }
